@@ -6,6 +6,7 @@ import com.czh.tool.czh.tool.config.ValidatedExceptionConfig;
 import com.czh.tool.czh.tool.response.AjaxResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -24,6 +25,7 @@ import java.util.Map;
  */
 @Slf4j
 @RestControllerAdvice()
+@Order(value = 1000)
 public class CzhExceptionControllerAdvice {
 
     @Autowired

@@ -10,20 +10,30 @@ import java.io.Serializable;
  * @author czh
  * @since 1.0
  */
-@ConfigurationProperties(prefix = "czh.tool.error")
+@ConfigurationProperties(prefix = "czh.tool.success")
 @Component
-public class ValidatedExceptionConfig implements Serializable {
+public class ValidatedSuccessConfig<T> implements Serializable {
 
     /**
-     * 验证失败错误码
+     * 成功返回码
      */
-    private Integer code=500;
+    private Integer code=200;
 
     /**
      * 验证失败错误信息
      */
-    public String message="参数校验失败";
+    public String message="请求成功";
 
+    private T data;
+
+    public ValidatedSuccessConfig(Integer code, String message, T data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+    }
+
+    public ValidatedSuccessConfig() {
+    }
 
     public Integer getCode() {
         return code;
@@ -39,5 +49,13 @@ public class ValidatedExceptionConfig implements Serializable {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 }
