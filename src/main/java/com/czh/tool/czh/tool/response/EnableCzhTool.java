@@ -18,5 +18,5 @@ import java.lang.annotation.*;
 @Documented
 @Inherited
 @Import(ToolAutoConfig.class)
-public @interface EnableResponse {
+public @interface EnableCzhTool {
 }
