@@ -18,23 +18,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Description:  集中处理所有异常
- * @Created: with IntelliJ IDEA.
- * @author: czh
- * @createTime: 2020-05-27 17:14
- **/
-
+ * 这是一个统一异常处理类。
+ * @author czh
+ * @since 1.0
+ */
 @Slf4j
 @RestControllerAdvice()
-public abstract class CzhExceptionControllerAdvice {
+public class CzhExceptionControllerAdvice {
 
     @Autowired
     private ValidatedExceptionConfig validatedExceptionConfig;
 
     /**
      * 参数非法（效验参数）异常 MethodArgumentNotValidException
-     * @param e
-     * @return
+     * @param e 参数异常类
+     * @return 返回错误信息
      */
     @ExceptionHandler({MethodArgumentNotValidException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -52,8 +50,8 @@ public abstract class CzhExceptionControllerAdvice {
 
     /**
      * 参数非法（效验参数）异常 ConstraintViolationException
-     * @param e
-     * @return
+     * @param e 参数异常类
+     * @return 返回错误信息
      */
     @ExceptionHandler({ConstraintViolationException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)

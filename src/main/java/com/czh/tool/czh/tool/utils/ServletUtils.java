@@ -1,6 +1,7 @@
 package com.czh.tool.czh.tool.utils;
 
-import com.sun.tools.javac.util.Convert;
+import com.czh.tool.czh.tool.constant.Constants;
+import com.czh.tool.czh.tool.text.Convert;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -20,159 +21,140 @@ import java.util.Map;
 /**
  * 客户端工具类
  *
- * @author czh
+ * 提供处理servlet请求和响应的各种工具方法。
+ *
  */
-public class ServletUtils
-{
+public class ServletUtils {
+
     /**
-     * 获取String参数
+     * 获取请求参数的值作为字符串。
+     *
+     * @param name 参数名
+     * @return 参数值作为字符串
      */
-    public static String getParameter(String name)
-    {
+    public static String getParameter(String name) {
         return getRequest().getParameter(name);
     }
 
     /**
-     * 获取String参数
+     * 获取请求参数的值作为字符串，并提供默认值。
+     *
+     * @param name 参数名
+     * @param defaultValue 默认值
+     * @return 参数值作为字符串，如果参数不存在则返回默认值
      */
-    public static String getParameter(String name, String defaultValue)
-    {
+    public static String getParameter(String name, String defaultValue) {
         return Convert.toStr(getRequest().getParameter(name), defaultValue);
     }
 
     /**
-     * 获取Integer参数
+     * 获取请求参数的值作为整数。
+     *
+     * @param name 参数名
+     * @return 参数值作为整数
      */
-    public static Integer getParameterToInt(String name)
-    {
+    public static Integer getParameterToInt(String name) {
         return Convert.toInt(getRequest().getParameter(name));
     }
 
     /**
-     * 获取Integer参数
-     */
-    public static Integer getParameterToInt(String name, Integer defaultValue)
-    {
-        return Convert.toInt(getRequest().getParameter(name), defaultValue);
-    }
-
-    /**
-     * 获取Boolean参数
-     */
-    public static Boolean getParameterToBool(String name)
-    {
-        return Convert.toBool(getRequest().getParameter(name));
-    }
-
-    /**
-     * 获取Boolean参数
-     */
-    public static Boolean getParameterToBool(String name, Boolean defaultValue)
-    {
-        return Convert.toBool(getRequest().getParameter(name), defaultValue);
-    }
-
-    /**
-     * 获得所有请求参数
+     * 获取所有请求参数。
      *
      * @param request 请求对象{@link ServletRequest}
-     * @return Map
+     * @return 参数的Map
      */
-    public static Map<String, String[]> getParams(ServletRequest request)
-    {
+    public static Map<String, String[]> getParams(ServletRequest request) {
         final Map<String, String[]> map = request.getParameterMap();
         return Collections.unmodifiableMap(map);
     }
 
     /**
-     * 获得所有请求参数
+     * 获取所有请求参数并以键值对形式返回。
      *
      * @param request 请求对象{@link ServletRequest}
-     * @return Map
+     * @return 参数的键值对Map
      */
-    public static Map<String, String> getParamMap(ServletRequest request)
-    {
+    public static Map<String, String> getParamMap(ServletRequest request) {
         Map<String, String> params = new HashMap<>();
-        for (Map.Entry<String, String[]> entry : getParams(request).entrySet())
-        {
+        for (Map.Entry<String, String[]> entry : getParams(request).entrySet()) {
             params.put(entry.getKey(), StringUtils.join(entry.getValue(), ","));
         }
         return params;
     }
 
     /**
-     * 获取request
+     * 获取当前的HttpServletRequest对象。
+     *
+     * @return 当前的HttpServletRequest对象
      */
-    public static HttpServletRequest getRequest()
-    {
+    public static HttpServletRequest getRequest() {
         return getRequestAttributes().getRequest();
     }
 
     /**
-     * 获取response
+     * 获取当前的HttpServletResponse对象。
+     *
+     * @return 当前的HttpServletResponse对象
      */
-    public static HttpServletResponse getResponse()
-    {
+    public static HttpServletResponse getResponse() {
         return getRequestAttributes().getResponse();
     }
 
     /**
-     * 获取session
+     * 获取当前的HttpSession对象。
+     *
+     * @return 当前的HttpSession对象
      */
-    public static HttpSession getSession()
-    {
+    public static HttpSession getSession() {
         return getRequest().getSession();
     }
 
-    public static ServletRequestAttributes getRequestAttributes()
-    {
+    /**
+     * 获取当前的ServletRequestAttributes对象。
+     *
+     * @return 当前的ServletRequestAttributes对象
+     */
+    public static ServletRequestAttributes getRequestAttributes() {
         RequestAttributes attributes = RequestContextHolder.getRequestAttributes();
         return (ServletRequestAttributes) attributes;
     }
 
     /**
-     * 将字符串渲染到客户端
+     * 将字符串渲染到客户端。
      *
-     * @param response 渲染对象
+     * @param response 响应对象
      * @param string 待渲染的字符串
      */
-    public static void renderString(HttpServletResponse response, String string)
-    {
-        try
-        {
+    public static void renderString(HttpServletResponse response, String string) {
+        try {
             response.setStatus(200);
             response.setContentType("application/json");
             response.setCharacterEncoding("utf-8");
             response.getWriter().print(string);
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * 是否是Ajax异步请求
+     * 判断是否是Ajax异步请求。
      *
-     * @param request
+     * @param request 请求对象
+     * @return 如果是Ajax异步请求返回true，否则返回false
      */
-    public static boolean isAjaxRequest(HttpServletRequest request)
-    {
+    public static boolean isAjaxRequest(HttpServletRequest request) {
         String accept = request.getHeader("accept");
-        if (accept != null && accept.contains("application/json"))
-        {
+        if (accept != null && accept.contains("application/json")) {
             return true;
         }
 
         String xRequestedWith = request.getHeader("X-Requested-With");
-        if (xRequestedWith != null && xRequestedWith.contains("XMLHttpRequest"))
-        {
+        if (xRequestedWith != null && xRequestedWith.contains("XMLHttpRequest")) {
             return true;
         }
 
         String uri = request.getRequestURI();
-        if (StringUtils.inStringIgnoreCase(uri, ".json", ".xml"))
-        {
+        if (StringUtils.inStringIgnoreCase(uri, ".json", ".xml")) {
             return true;
         }
 
@@ -181,37 +163,29 @@ public class ServletUtils
     }
 
     /**
-     * 内容编码
+     * URL编码。
      *
-     * @param str 内容
+     * @param str 待编码的内容
      * @return 编码后的内容
      */
-    public static String urlEncode(String str)
-    {
-        try
-        {
+    public static String urlEncode(String str) {
+        try {
             return URLEncoder.encode(str, Constants.UTF8);
-        }
-        catch (UnsupportedEncodingException e)
-        {
+        } catch (UnsupportedEncodingException e) {
             return StringUtils.EMPTY;
         }
     }
 
     /**
-     * 内容解码
+     * URL解码。
      *
-     * @param str 内容
+     * @param str 待解码的内容
      * @return 解码后的内容
      */
-    public static String urlDecode(String str)
-    {
-        try
-        {
+    public static String urlDecode(String str) {
+        try {
             return URLDecoder.decode(str, Constants.UTF8);
-        }
-        catch (UnsupportedEncodingException e)
-        {
+        } catch (UnsupportedEncodingException e) {
             return StringUtils.EMPTY;
         }
     }

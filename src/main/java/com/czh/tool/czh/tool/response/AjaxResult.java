@@ -77,7 +77,7 @@ public class AjaxResult extends HashMap<String, Object>
 
     /**
      * 返回成功数据
-     *
+     * @param  data 参数信息
      * @return 成功消息
      */
     public static AjaxResult success(Object data)

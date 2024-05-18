@@ -21,19 +21,20 @@ public @interface Prevent {
     /**
      * 限制的时间值（秒）
      *
-     * @return
+     * @return 限制
      */
     String value() default "60";
 
     /**
      * 提示
+     * @return 信息提示
      */
     String message() default "";
 
     /**
      * 策略
      *
-     * @return
+     * @return 默认策略
      */
-    PreventStrategy strategy() default PreventStrategy.DEFAULT;
+    PreventStrategy strategy()default PreventStrategy.DEFAULT;
 }

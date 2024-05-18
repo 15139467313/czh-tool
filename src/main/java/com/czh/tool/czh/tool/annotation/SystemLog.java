@@ -14,11 +14,13 @@ import java.lang.annotation.*;
 public @interface SystemLog {
     /**
      * 模块
+     * @return 模块
      */
     public String title() default "";
 
     /**
      * 功能
+     * @return 默认文本
      */
     public String content() default "";
 }

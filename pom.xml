@@ -8,13 +8,46 @@
         <version>2.5.15</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.czh.tool</groupId>
+
+
+    <groupId>io.github.15139467313</groupId>
     <artifactId>czh-tool</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.5</version>
     <name>czh-tool</name>
     <description>czh-tool</description>
+    <url>https://github.com/15139467313/czh-tool</url>
+
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+
+    <developers>
+        <developer>
+            <id>czh</id>
+            <name>czh</name>
+            <email>2766694258@qq.com</email>
+            <roles>
+                <role>Project Manager</role>
+                <role>Architect</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>https://github.com/15139467313/czh-tool.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:15139467313/czh-tool.git
+        </developerConnection>
+        <url>https://github.com/15139467313/czh-tool</url>
+    </scm>
+
     <properties>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
 
@@ -33,11 +66,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Spring Security Starter，用于安全认证 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+<!--        &lt;!&ndash; Spring Security Starter，用于安全认证 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
 
         <!-- Lombok，用于减少样板代码 -->
         <dependency>
@@ -99,6 +132,18 @@
         </dependency>
 
 
+        <!-- https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-ri -->
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-ri</artifactId>
+            <version>2.3.2</version>
+            <type>pom</type>
+        </dependency>
+
+
+
+
+
         <!-- Jakarta Validation API，用于数据验证 -->
         <dependency>
             <groupId>jakarta.validation</groupId>
@@ -125,19 +170,75 @@
 
     <build>
         <plugins>
+
+            <!--   central发布插件    -->
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.4.0</version>
+                <extensions>true</extensions>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <publishingServerId>czh</publishingServerId>
+                    <tokenAuth>true</tokenAuth>
                 </configuration>
             </plugin>
+
+
+            <!--   source源码插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--   javadoc插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <!--  必须配置GPG插件用于使用以下配置对组件进行签名 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+
+
+
+
         </plugins>
     </build>
+
+
 
 </project>

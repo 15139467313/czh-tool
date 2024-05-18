@@ -2,7 +2,17 @@ package com.czh.tool.czh.tool.utils.uuid;
 
 
 
-import com.sun.xml.internal.ws.util.UtilException;
+
+
+
+
+
+
+
+
+
+
+import com.sun.xml.ws.util.UtilException;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -228,18 +238,11 @@ public final class UUID implements java.io.Serializable, Comparable<UUID>
         return (int) ((leastSigBits >>> (64 - (leastSigBits >>> 62))) & (leastSigBits >> 63));
     }
 
+
     /**
-     * 与此 UUID 相关联的时间戳值。
      *
-     * <p>
-     * 60 位的时间戳值根据此 {@code UUID} 的 time_low、time_mid 和 time_hi 字段构造。<br>
-     * 所得到的时间戳以 100 毫微秒为单位，从 UTC（通用协调时间） 1582 年 10 月 15 日零时开始。
-     *
-     * <p>
-     * 时间戳值仅在在基于时间的 UUID（其 version 类型为 1）中才有意义。<br>
-     * 如果此 {@code UUID} 不是基于时间的 UUID，则此方法抛出 UnsupportedOperationException。
-     *
-     * @throws UnsupportedOperationException 如果此 {@code UUID} 不是 version 为 1 的 UUID。
+     * @return 与此 UUID 相关联的时间戳值。
+     * @throws UnsupportedOperationException 不是基于时间的 UUID，则此方法抛出 UnsupportedOperationException。
      */
     public long timestamp() throws UnsupportedOperationException
     {
@@ -288,25 +291,6 @@ public final class UUID implements java.io.Serializable, Comparable<UUID>
     }
 
     /**
-     * 返回此{@code UUID} 的字符串表现形式。
-     *
-     * <p>
-     * UUID 的字符串表示形式由此 BNF 描述：
-     *
-     * <pre>
-     * {@code
-     * UUID                   = <time_low>-<time_mid>-<time_high_and_version>-<variant_and_sequence>-<node>
-     * time_low               = 4*<hexOctet>
-     * time_mid               = 2*<hexOctet>
-     * time_high_and_version  = 2*<hexOctet>
-     * variant_and_sequence   = 2*<hexOctet>
-     * node                   = 6*<hexOctet>
-     * hexOctet               = <hexDigit><hexDigit>
-     * hexDigit               = [0-9a-fA-F]
-     * }
-     * </pre>
-     *
-     * </blockquote>
      *
      * @return 此{@code UUID} 的字符串表现形式
      * @see #toString(boolean)
@@ -317,26 +301,8 @@ public final class UUID implements java.io.Serializable, Comparable<UUID>
         return toString(false);
     }
 
+
     /**
-     * 返回此{@code UUID} 的字符串表现形式。
-     *
-     * <p>
-     * UUID 的字符串表示形式由此 BNF 描述：
-     *
-     * <pre>
-     * {@code
-     * UUID                   = <time_low>-<time_mid>-<time_high_and_version>-<variant_and_sequence>-<node>
-     * time_low               = 4*<hexOctet>
-     * time_mid               = 2*<hexOctet>
-     * time_high_and_version  = 2*<hexOctet>
-     * variant_and_sequence   = 2*<hexOctet>
-     * node                   = 6*<hexOctet>
-     * hexOctet               = <hexDigit><hexDigit>
-     * hexDigit               = [0-9a-fA-F]
-     * }
-     * </pre>
-     *
-     * </blockquote>
      *
      * @param isSimple 是否简单模式，简单模式为不带'-'的UUID字符串
      * @return 此{@code UUID} 的字符串表现形式

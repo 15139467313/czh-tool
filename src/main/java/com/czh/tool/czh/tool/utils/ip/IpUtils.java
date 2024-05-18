@@ -2,8 +2,10 @@ package com.czh.tool.czh.tool.utils.ip;
 
 
 
-import com.czh.utils.ServletUtils;
-import com.czh.utils.StringUtils;
+
+
+import com.czh.tool.czh.tool.utils.ServletUtils;
+import com.czh.tool.czh.tool.utils.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
@@ -285,6 +287,8 @@ public class IpUtils
 
     /**
      * 是否为IP
+     * @param ip ip
+     * @return 返回
      */
     public static boolean isIP(String ip)
     {
@@ -292,15 +296,21 @@ public class IpUtils
     }
 
     /**
-     * 是否为IP，或 *为间隔的通配符地址
+     *
+     * @param ip 是否为IP，或 *为间隔的通配符地址
+     * @return 返回
      */
     public static boolean isIpWildCard(String ip)
     {
         return StringUtils.isNotBlank(ip) && ip.matches(REGX_IP_WILDCARD);
     }
 
+
     /**
-     * 检测参数是否在ip通配符里
+     *
+     * @param ipWildCard 检测参数是否在ip通配符里
+     * @param ip ip
+     * @return  返回
      */
     public static boolean ipIsInWildCardNoCheck(String ipWildCard, String ip)
     {
@@ -319,7 +329,9 @@ public class IpUtils
     }
 
     /**
-     * 是否为特定格式如:“10.10.10.1-10.10.10.99”的ip段字符串
+     *
+     * @param ipSeg 是否为特定格式如:“10.10.10.1-10.10.10.99”的ip段字符串
+     * @return 返回
      */
     public static boolean isIPSegment(String ipSeg)
     {
@@ -327,7 +339,10 @@ public class IpUtils
     }
 
     /**
-     * 判断ip是否在指定网段中
+     *
+     * @param iparea ip地区
+     * @param ip ip
+     * @return 判断ip是否在指定网段中
      */
     public static boolean ipIsInNetNoCheck(String iparea, String ip)
     {

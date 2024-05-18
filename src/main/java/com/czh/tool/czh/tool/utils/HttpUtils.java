@@ -1,6 +1,7 @@
 package com.czh.tool.czh.tool.utils;
 
-import com.czh.constant.Constants;
+
+import com.czh.tool.czh.tool.constant.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,26 +34,13 @@ public class HttpUtils
         return sendGet(url, StringUtils.EMPTY);
     }
 
-    /**
-     * 向指定 URL 发送GET方法的请求
-     *
-     * @param url 发送请求的 URL
-     * @param param 请求参数，请求参数应该是 name1=value1&name2=value2 的形式。
-     * @return 所代表远程资源的响应结果
-     */
+
     public static String sendGet(String url, String param)
     {
         return sendGet(url, param, Constants.UTF8);
     }
 
-    /**
-     * 向指定 URL 发送GET方法的请求
-     *
-     * @param url 发送请求的 URL
-     * @param param 请求参数，请求参数应该是 name1=value1&name2=value2 的形式。
-     * @param contentType 编码类型
-     * @return 所代表远程资源的响应结果
-     */
+
     public static String sendGet(String url, String param, String contentType)
     {
         StringBuilder result = new StringBuilder();
@@ -108,13 +96,7 @@ public class HttpUtils
         return result.toString();
     }
 
-    /**
-     * 向指定 URL 发送POST方法的请求
-     *
-     * @param url 发送请求的 URL
-     * @param param 请求参数，请求参数应该是 name1=value1&name2=value2 的形式。
-     * @return 所代表远程资源的响应结果
-     */
+
     public static String sendPost(String url, String param)
     {
         PrintWriter out = null;

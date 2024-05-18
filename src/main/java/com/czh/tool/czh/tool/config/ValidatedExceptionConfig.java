@@ -6,11 +6,9 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 
 /**
- * @ClassNAME ValidatedExceptionConfig
- * @Description TODO
- * @Author czh
- * @Date 2024/5/18 10:01
- * @Version 1.0
+ *
+ * @author czh
+ * @since 1.0
  */
 @ConfigurationProperties(prefix = "czh.tool")
 @Component
@@ -19,7 +17,7 @@ public class ValidatedExceptionConfig implements Serializable {
     /**
      * 验证失败错误码
      */
-    private String code;
+    private Integer code;
 
     /**
      * 验证失败错误信息
@@ -27,11 +25,11 @@ public class ValidatedExceptionConfig implements Serializable {
     public String message;
 
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 

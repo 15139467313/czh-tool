@@ -40,8 +40,8 @@ public class SystemLogAspect {
      * 设置操作日志切入点，这里介绍两种方式：
      * 1、基于注解切入（也就是打了自定义注解的方法才会切入）
      *
-     * @Pointcut("@annotation(com.czh.aop.annotation.SystemLog)") 2、基于包扫描切入
-     * @Pointcut("@annotation(com.czh.aop.annotation.SystemLog)")
+     * ("@annotation(com.czh.aop.annotation.SystemLog)") 2、基于包扫描切入
+     * ("@annotation(com.czh.aop.annotation.SystemLog)")
      */
     @Pointcut("@annotation(com.czh.tool.czh.tool.annotation.SystemLog)")//在注解的位置切入代码
     //@Pointcut("execution(public * org.wujiangbo.controller..*.*(..))")//从controller切入
@@ -49,8 +49,10 @@ public class SystemLogAspect {
 
     }
 
+
     /**
-     * 处理请求前执行
+     *
+     * @param joinPoint 处理请求前执行
      */
     @Before("operLogPoinCut()")
     public void boBefore(JoinPoint joinPoint) {
@@ -92,10 +94,11 @@ public class SystemLogAspect {
 
     }
 
+
     /**
-     * 处理完请求后执行
      *
      * @param joinPoint 切点
+     * @param jsonResult 切果
      */
     @AfterReturning(value = "operLogPoinCut()", returning = "jsonResult")
     public void doAfterReturning(JoinPoint joinPoint, Object jsonResult)
