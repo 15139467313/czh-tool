@@ -80,10 +80,6 @@ public class SystemLogAspect {
             log.info("入口功能:" + myLog.content());
             log.info("IP:" + IpUtils.getIpAddr(request));
             log.info("入口参数=" + params);
-            // 获取请求的类名
-            String className = joinPoint.getTarget().getClass().getName();
-            // 获取请求的方法名
-            String methodName = method.getName();
 
 
         } catch (Exception exp) {
