@@ -1,0 +1,9 @@
+logging:
+  file:
+    path: /Users/czh/log
+  level:
+    root: INFO
+server:
+  port: 8082
+
+

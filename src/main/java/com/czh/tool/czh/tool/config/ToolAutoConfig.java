@@ -1,5 +1,7 @@
 package com.czh.tool.czh.tool.config;
 
+import com.czh.tool.czh.tool.aspectj.PreventAspect;
+import com.czh.tool.czh.tool.aspectj.SystemLogAspect;
 import com.czh.tool.czh.tool.exception.CzhExceptionControllerAdvice;
 import com.czh.tool.czh.tool.exception.GrNotVoidResponseBodyAdvice;
 import com.czh.tool.czh.tool.response.ResponseFactory;
@@ -17,6 +19,11 @@ public class ToolAutoConfig {
     @Bean
     public GlobalResponseHandlerConfig globalResponseHandler() {
         return new GlobalResponseHandlerConfig();
+    }
+
+    @Bean
+    public ExceptionConfig exceptionConfig() {
+        return new ExceptionConfig();
     }
 
     @Bean
@@ -39,4 +46,14 @@ public class ToolAutoConfig {
         return new GrNotVoidResponseBodyAdvice();
     }
 
+
+    @Bean
+    public SystemLogAspect systemLogAspect() {
+        return new SystemLogAspect();
+    }
+
+    @Bean
+    public PreventAspect preventAspect() {
+        return new PreventAspect();
+    }
 }

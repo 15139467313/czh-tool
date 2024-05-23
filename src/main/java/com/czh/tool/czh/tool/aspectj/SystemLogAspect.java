@@ -27,7 +27,7 @@ import java.util.UUID;
  *
  * @author czh
  */
-@Component
+
 @Aspect
 public class SystemLogAspect {
     private static final Logger log = LoggerFactory.getLogger(SystemLogAspect.class);

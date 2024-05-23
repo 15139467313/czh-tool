@@ -1,0 +1,74 @@
+16:34:05.829 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:34:05.833 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStarting,55] - Starting CzhToolApplication using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 97274 (/Users/czh/czh-tool/target/classes started by czh in /Users/czh/czh-tool)
+16:34:05.834 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:34:06.300 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+16:34:06.300 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:34:06.301 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:34:06.394 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:34:06.680 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+16:34:06.693 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Pausing ProtocolHandler ["http-nio-8080"]
+16:34:06.693 [main] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+16:34:06.695 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Stopping ProtocolHandler ["http-nio-8080"]
+16:34:06.695 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Destroying ProtocolHandler ["http-nio-8080"]
+16:34:16.796 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:34:16.802 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStarting,55] - Starting CzhToolApplication using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 97314 (/Users/czh/czh-tool/target/classes started by czh in /Users/czh/czh-tool)
+16:34:16.802 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:34:17.234 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+16:34:17.235 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:34:17.235 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:34:17.311 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:34:17.578 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+16:34:17.593 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStarted,61] - Started CzhToolApplication in 0.928 seconds (JVM running for 1.183)
+16:37:38.572 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:37:38.574 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStarting,55] - Starting CzhToolApplication using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 97977 (/Users/czh/czh-tool/target/classes started by czh in /Users/czh/czh-tool)
+16:37:38.574 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:37:39.006 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+16:37:39.006 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:37:39.006 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:37:39.082 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:37:39.344 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+16:37:39.359 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStarted,61] - Started CzhToolApplication in 0.92 seconds (JVM running for 1.182)
+16:39:40.757 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:39:40.762 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStarting,55] - Starting CzhToolApplication using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 98388 (/Users/czh/czh-tool/target/classes started by czh in /Users/czh/czh-tool)
+16:39:40.762 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:39:41.193 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+16:39:41.193 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:39:41.193 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:39:41.264 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:39:41.530 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+16:39:41.544 [main] INFO  c.c.t.c.t.CzhToolApplication - [logStarted,61] - Started CzhToolApplication in 0.919 seconds (JVM running for 1.165)
+16:40:21.861 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:40:21.887 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarting,55] - Starting CzhToolApplicationTests using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 98532 (started by czh in /Users/czh/czh-tool)
+16:40:21.887 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:40:23.037 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarted,61] - Started CzhToolApplicationTests in 1.312 seconds (JVM running for 1.727)
+16:40:23.127 [main] INFO  c.c.t.c.t.a.SystemLogAspect - [contextLoads,15] - 111
+16:45:05.189 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarting,55] - Starting CzhToolApplicationTests using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 99446 (started by czh in /Users/czh/czh-tool)
+16:45:05.189 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:45:05.190 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:45:06.342 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarted,61] - Started CzhToolApplicationTests in 1.314 seconds (JVM running for 1.761)
+16:45:06.433 [main] INFO  c.c.t.c.t.a.SystemLogAspect - [contextLoads,15] - 111
+16:45:26.167 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:45:26.167 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarting,55] - Starting CzhToolApplicationTests using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 99512 (started by czh in /Users/czh/czh-tool)
+16:45:26.168 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:45:27.305 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarted,61] - Started CzhToolApplicationTests in 1.313 seconds (JVM running for 1.744)
+16:45:27.385 [main] INFO  c.c.t.c.t.a.SystemLogAspect - [contextLoads,15] - 111
+16:47:24.102 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:47:24.103 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarting,55] - Starting CzhToolApplicationTests using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 99903 (started by czh in /Users/czh/czh-tool)
+16:47:24.104 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:47:25.279 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarted,61] - Started CzhToolApplicationTests in 1.336 seconds (JVM running for 1.758)
+16:47:25.362 [main] INFO  c.c.t.c.t.a.SystemLogAspect - [contextLoads,15] - 111
+16:47:34.359 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:47:34.360 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarting,55] - Starting CzhToolApplicationTests using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 99938 (started by czh in /Users/czh/czh-tool)
+16:47:34.361 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:47:35.492 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarted,61] - Started CzhToolApplicationTests in 1.298 seconds (JVM running for 1.729)
+16:47:35.566 [main] INFO  c.c.t.c.t.a.SystemLogAspect - [contextLoads,15] - 111
+16:48:07.154 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:48:07.153 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarting,55] - Starting CzhToolApplicationTests using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 153 (started by czh in /Users/czh/czh-tool)
+16:48:07.155 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:48:08.295 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarted,61] - Started CzhToolApplicationTests in 1.301 seconds (JVM running for 1.734)
+16:48:08.380 [main] INFO  c.c.t.c.t.a.SystemLogAspect - [contextLoads,15] - 111
+16:49:04.167 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarting,55] - Starting CzhToolApplicationTests using Java 1.8.0_381 on czhdeMacBook-Pro.local with PID 341 (started by czh in /Users/czh/czh-tool)
+16:49:04.167 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.5.Final
+16:49:04.169 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStartupProfileInfo,680] - No active profile set, falling back to 1 default profile: "default"
+16:49:05.361 [main] INFO  c.c.t.c.CzhToolApplicationTests - [logStarted,61] - Started CzhToolApplicationTests in 1.358 seconds (JVM running for 1.785)
+16:49:05.444 [main] INFO  c.c.t.c.t.a.SystemLogAspect - [contextLoads,15] - 111

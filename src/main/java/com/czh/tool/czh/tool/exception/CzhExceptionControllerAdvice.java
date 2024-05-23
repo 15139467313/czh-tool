@@ -2,6 +2,7 @@ package com.czh.tool.czh.tool.exception;
 
 
 
+import com.czh.tool.czh.tool.config.ExceptionConfig;
 import com.czh.tool.czh.tool.config.ValidatedExceptionConfig;
 import com.czh.tool.czh.tool.response.AjaxResult;
 import lombok.extern.slf4j.Slf4j;
@@ -11,9 +12,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolationException;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +33,9 @@ public class CzhExceptionControllerAdvice {
 
     @Autowired
     private ValidatedExceptionConfig validatedExceptionConfig;
+
+    @Autowired
+    private ExceptionConfig exceptionConfig;
 
     /**
      * 参数非法（效验参数）异常 MethodArgumentNotValidException
@@ -64,6 +70,20 @@ public class CzhExceptionControllerAdvice {
                 .put("data",e.getMessage());
     }
 
+    /**
+     *
+     * @param e Throwable 业务逻辑抛出的异常
+     * @param request 请求头
+     * @return 统一返回包装后的结果
+     */
+    @ExceptionHandler({Throwable.class})
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public AjaxResult handleException(Throwable e, HttpServletRequest request) {
+        String requestURI = request.getRequestURI();
+        log.error("请求地址'{}',发生未知异常.", requestURI, e);
+        return AjaxResult.error(exceptionConfig.getCode(),exceptionConfig.getMessage())
+                .put("data",e.getMessage());
+    }
 
 
 

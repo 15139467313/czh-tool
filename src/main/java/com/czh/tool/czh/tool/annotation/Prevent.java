@@ -19,11 +19,11 @@ import java.lang.annotation.*;
 public @interface Prevent {
 
     /**
-     * 限制的时间值（秒）
+     * 限制的时间值（毫秒）
      *
      * @return 限制
      */
-    String value() default "60";
+    String value() default "1000";
 
     /**
      * 提示

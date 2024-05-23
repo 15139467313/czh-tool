@@ -10,14 +10,14 @@ import java.io.Serializable;
  * @author czh
  * @since 1.0
  */
-@ConfigurationProperties(prefix = "czh.tool.valid.error")
+@ConfigurationProperties(prefix = "czh.tool.prevent.error")
 @Component
-public class ValidatedExceptionConfig implements Serializable {
+public class PreventExceptionConfig implements Serializable {
 
     /**
      * 验证失败错误码
      */
-    private Integer code=400;
+    private Integer code=406;
 
     /**
      * 验证失败错误信息

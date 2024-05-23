@@ -10,19 +10,19 @@ import java.io.Serializable;
  * @author czh
  * @since 1.0
  */
-@ConfigurationProperties(prefix = "czh.tool.valid.error")
+@ConfigurationProperties(prefix = "czh.tool.error")
 @Component
-public class ValidatedExceptionConfig implements Serializable {
+public class ExceptionConfig implements Serializable {
 
     /**
      * 验证失败错误码
      */
-    private Integer code=400;
+    private Integer code=500;
 
     /**
      * 验证失败错误信息
      */
-    public String message="参数校验失败";
+    public String message="系统异常";
 
 
     public Integer getCode() {
