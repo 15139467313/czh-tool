@@ -45,10 +45,7 @@ public class ExampleApplication {
 
 <img src="https://znunwm.top/upload/2023/04/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230402163414.jpg" width = "230" height="300" style="float:left; margin: 15px;"/>
 
-
-
-
-<img src="https://znunwm.top/upload/2023/04/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230402161550.jpg" width = "230" height="300" style="float:left; margin-left: 35px;"/>
+<img src="https://znunwm.top/upload/2023/04/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230402161550.jpg" width = "230" height="300" style="float:left; margin-left: 35px; display: inline;"/>
 
 
 # 作者信息
