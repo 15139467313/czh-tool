@@ -77,8 +77,6 @@ public class GrNotVoidResponseBodyAdvice implements ResponseBodyAdvice<Object> {
         if (method.getReturnType().getName().equals("com.czh.tool.czh.tool.response.AjaxResult")){
             return false;
         }
-
-
         return true;
 }
 

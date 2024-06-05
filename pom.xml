@@ -12,7 +12,7 @@
 
     <groupId>io.github.15139467313</groupId>
     <artifactId>czh-tool</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.7</version>
     <name>czh-tool</name>
     <description>czh-tool</description>
     <url>https://github.com/15139467313/czh-tool</url>
@@ -72,6 +72,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.20</version>
         </dependency>
 
         <!-- Spring Boot Starter，用于验证 -->

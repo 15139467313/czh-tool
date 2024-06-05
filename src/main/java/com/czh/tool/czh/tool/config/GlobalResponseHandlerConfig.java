@@ -8,6 +8,7 @@ package com.czh.tool.czh.tool.config;
  * @Version 1.0
  */
 
+import com.czh.tool.czh.tool.annotation.FileUpload;
 import com.czh.tool.czh.tool.response.AjaxResult;
 import com.czh.tool.czh.tool.response.ResponseFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Method;
 import java.util.Objects;
 
 @ControllerAdvice

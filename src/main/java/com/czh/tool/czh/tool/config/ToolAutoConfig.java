@@ -1,5 +1,6 @@
 package com.czh.tool.czh.tool.config;
 
+import com.czh.tool.czh.tool.aspectj.FileUploadAspect;
 import com.czh.tool.czh.tool.aspectj.PreventAspect;
 import com.czh.tool.czh.tool.aspectj.SystemLogAspect;
 import com.czh.tool.czh.tool.exception.CzhExceptionControllerAdvice;
@@ -56,4 +57,10 @@ public class ToolAutoConfig {
     public PreventAspect preventAspect() {
         return new PreventAspect();
     }
+
+    @Bean
+    public FileUploadAspect fileUploadAspect() {
+        return new FileUploadAspect();
+    }
 }
+

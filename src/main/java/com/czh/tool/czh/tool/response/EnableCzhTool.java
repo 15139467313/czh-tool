@@ -1,6 +1,7 @@
 package com.czh.tool.czh.tool.response;
 
 import com.czh.tool.czh.tool.config.ToolAutoConfig;
+import com.czh.tool.czh.tool.config.ToolFileAutoConfig;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
@@ -17,6 +18,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-@Import(ToolAutoConfig.class)
+@Import({ToolAutoConfig.class, ToolFileAutoConfig.class})
 public @interface EnableCzhTool {
 }

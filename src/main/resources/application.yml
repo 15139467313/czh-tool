@@ -1,9 +1,14 @@
-#logging:
-#  file:
-#    path: /Users/czh/log
-#  level:
-#    root: INFO
-#server:
-#  port: 8082
-#
-#
+##logging:
+##  file:
+##    path: /Users/czh/log
+##  level:
+##    root: INFO
+##server:
+##  port: 8082
+##
+##
+#spring:
+#  resources:     #访问系统外部资源，将该目录下的文件映射到系统下
+#    static-locations: file:/Users/czh/tlls/20240605 #本地文件
+#    mvc:
+#      static-path-pattern: /file/**
