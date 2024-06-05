@@ -22,12 +22,10 @@
  import java.time.Duration;
 
  /**
-  * @Description:
-  * @Created:
-  * @author: czh
-  * @createTime: 2023-12-12 15:25
-  **/
-
+  * 自定义redis 配置
+  *
+  * @author czh
+  */
  @Configuration
  @EnableCaching
  public class RedisConfig extends CachingConfigurerSupport {
@@ -63,8 +61,8 @@
 
      /**
       *  配置序列化
-      * @param redisConnectionFactory
-      * @return
+      * @param redisConnectionFactory 自定义工厂
+      * @return 返回
       */
      @Bean
      public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
@@ -86,8 +84,11 @@
          return redisTemplate;
      }
 
+
      /**
-      *  采用 RedisCacheManager 作为缓存管理器
+      *
+      * @param factory 采用 RedisCacheManager 作为缓存管理器
+      * @return CacheManager
       */
      @Bean
      public CacheManager cacheManager(RedisConnectionFactory factory) {

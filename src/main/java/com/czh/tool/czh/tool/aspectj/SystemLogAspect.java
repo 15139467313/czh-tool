@@ -23,7 +23,7 @@ import java.lang.reflect.Method;
 import java.util.UUID;
 
 /**
- * 自定义操作日志记录注解
+ * 自定义操作日志记录
  *
  * @author czh
  */

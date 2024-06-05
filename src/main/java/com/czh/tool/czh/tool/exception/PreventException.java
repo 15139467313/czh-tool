@@ -1,11 +1,9 @@
 package com.czh.tool.czh.tool.exception;
 
 /**
- * @ClassNAME CzhException
- * @Description 自定义防刷异常
- * @Author czh
- * @Date 2024/1/9 09:43
- * @Version 1.0
+ * 这是一个防刷异常处理类。
+ * @author czh
+ * @since 1.0
  */
 
 public class PreventException extends RuntimeException{

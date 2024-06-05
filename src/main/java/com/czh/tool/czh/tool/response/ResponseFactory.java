@@ -17,6 +17,5 @@ public class ResponseFactory {
     public <T> ValidatedSuccessConfig<T> newSuccessInstance(T data) {
         return new ValidatedSuccessConfig<>(validatedSuccessConfig.getCode(), validatedSuccessConfig.getMessage(), data);
     }
-
 }
 

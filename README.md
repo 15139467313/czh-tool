@@ -8,6 +8,39 @@ czh-tool 基于SpringBoot一款快速单体框架里面集成了快速开发需�
 
 ```
 
+## 2. 快速入门  (仅支持SprinBoot2x版本不支持3x版本)
+
+### 3.1 引入czh-tool组件
+
+czh-tool已发布至maven中央仓库，我们可以直接引入到项目中。
+
+maven依赖如下：
+
+xml
+
+```java
+    //仅支持sprinboot2x版本不支持3x版本
+    <dependency>
+            <groupId>io.github.15139467313</groupId>
+            <artifactId>czh-tool</artifactId>
+            <version>0.1.9</version>
+        </dependency>
+```
+
+### 3.2 启用czh-tool
+
+在启动类中引入@ EnableCzhTool注解，即可启用czh-tool组件。
+
+```java
+@EnableCzhTool
+@SpringBootApplication
+public class ExampleApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ExampleApplication.class, args);
+    }
+}
+```
+
 如果您觉得这个项目对您有帮助，可以帮作者买杯饮料鼓励鼓励!
 
 <img src="https://znunwm.top/upload/2023/04/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230402163414.jpg" width = "230" height="300" style="float:left; margin: 15px;"/>

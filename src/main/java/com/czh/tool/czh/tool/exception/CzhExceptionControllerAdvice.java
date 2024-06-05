@@ -18,8 +18,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolationException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 /**
  * 这是一个统一异常处理类。
@@ -47,6 +52,7 @@ public class CzhExceptionControllerAdvice {
     public AjaxResult handleValidException(MethodArgumentNotValidException e) {
         log.error("数据效验出现问题{},异常类型{}",e.getMessage(),e.getClass());
         BindingResult bindingResult = e.getBindingResult();
+
 
         Map<String,String> errMap = new HashMap<>();
         bindingResult.getFieldErrors().forEach((fieldError) -> {
@@ -85,6 +91,31 @@ public class CzhExceptionControllerAdvice {
                 .put("data",e.getMessage());
     }
 
+
+//    public static void main(String[] args) {
+//            ExecutorService executorService1 = Executors.newFixedThreadPool(10);
+//
+//
+//        for (int i = 0; i < 10; i++) {
+//            executorService1.execute(() -> {
+//                System.out.println(Thread.currentThread().getName()+"hello");
+//            });
+//        }
+//            executorService1.shutdown();
+//
+//    }
+
+    public static void main(String[] args) {
+
+
+
+        for (int i = 0; i < 10; i++) {
+
+                System.out.println(Thread.currentThread().getName()+"hello");
+        }
+
+
+    }
 
 
 

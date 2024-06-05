@@ -7,8 +7,6 @@ import com.czh.tool.czh.tool.enums.PreventStrategy;
 
 import com.czh.tool.czh.tool.exception.PreventException;
 import com.czh.tool.czh.tool.utils.StringUtils;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -22,16 +20,14 @@ import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @ClassNAME PreventAspect
- * @Description TODO
- * @Author czh
- * @Date 2024/1/9 09:16
- * @Version 1.0
+ * 自定义操作防刷
+ *
+ * @author czh
  */
 
 @Aspect
 public class PreventAspect {
-    private static Logger log = LoggerFactory.getLogger(PreventAspect.class);
+
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -49,9 +45,9 @@ public class PreventAspect {
 
 
     /**
-     * 处理前
      *
-     * @return
+     * @param joinPoint 参数
+     * @throws Exception 异常
      */
     @Before("pointcut()")
     public void joinPoint(JoinPoint joinPoint) throws Exception {
@@ -71,8 +67,8 @@ public class PreventAspect {
     /**
      * 入口
      *
-     * @param prevent
-     * @param requestStr
+     * @param prevent 参数
+     * @param requestStr 返回
      */
     private void entrance(Prevent prevent, String requestStr,String methodFullName) throws Exception {
         PreventStrategy strategy = prevent.strategy();
@@ -89,8 +85,8 @@ public class PreventAspect {
     /**
      * 默认处理方式
      *
-     * @param requestStr
-     * @param prevent
+     * @param requestStr 请求参数
+     * @param prevent 放刷
      */
     private void defaultHandle(String requestStr, Prevent prevent,String methodFullName) throws Exception {
         String base64Str = toBase64String(requestStr);
