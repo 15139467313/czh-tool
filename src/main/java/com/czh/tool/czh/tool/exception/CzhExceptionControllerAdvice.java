@@ -2,6 +2,7 @@ package com.czh.tool.czh.tool.exception;
 
 
 
+import com.czh.tool.czh.tool.annotation.ExceptionMapper;
 import com.czh.tool.czh.tool.config.ExceptionConfig;
 import com.czh.tool.czh.tool.config.ValidatedExceptionConfig;
 import com.czh.tool.czh.tool.response.AjaxResult;
@@ -92,31 +93,24 @@ public class CzhExceptionControllerAdvice {
     }
 
 
-//    public static void main(String[] args) {
-//            ExecutorService executorService1 = Executors.newFixedThreadPool(10);
-//
-//
-//        for (int i = 0; i < 10; i++) {
-//            executorService1.execute(() -> {
-//                System.out.println(Thread.currentThread().getName()+"hello");
-//            });
-//        }
-//            executorService1.shutdown();
-//
-//    }
-
-    public static void main(String[] args) {
 
 
+    /**
+     *
+     * @param  e 业务逻辑抛出的异常
+     * @return 统一返回包装后的结果
+     */
+    @ExceptionHandler({RuntimeException.class})
+    public AjaxResult handleException(RuntimeException e) {
+        Class<? extends Throwable> clazz = e.getClass();
 
-        for (int i = 0; i < 10; i++) {
-
-                System.out.println(Thread.currentThread().getName()+"hello");
+        ExceptionMapper exceptionMapper = clazz.getAnnotation(ExceptionMapper.class);
+        if (exceptionMapper != null){
+            return AjaxResult.error(exceptionMapper.code(),exceptionMapper.msg());
         }
-
-
+        return AjaxResult.error(exceptionConfig.getCode(),exceptionConfig.getMessage())
+                .put("data",e.getMessage());
     }
-
 
 
 }
