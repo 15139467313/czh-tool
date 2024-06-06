@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author czh
  */
 @Component
-public interface FileUploadService {
+public interface FileDownService {
 
-    String upload(Object... args) throws IOException;
+    void down(Object... args) throws IOException;
 }

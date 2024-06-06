@@ -4,19 +4,16 @@ import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import com.czh.tool.czh.tool.annotation.type.FileUploadType;
 import com.czh.tool.czh.tool.config.FileUploadConfig;
-import com.czh.tool.czh.tool.enums.FileUploadStrategy;
+import com.czh.tool.czh.tool.enums.FileStrategy;
 import com.czh.tool.czh.tool.service.FileUploadService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.UUID;
 
@@ -27,7 +24,7 @@ import java.util.UUID;
  */
 @Service
 @Slf4j
-@FileUploadType(FileUploadStrategy.DEFAULT)
+@FileUploadType(FileStrategy.DEFAULT)
 public class DefaultUploadServiceImpl implements FileUploadService {
 
     @Autowired
