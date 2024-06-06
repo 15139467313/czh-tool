@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 /**
- * 文件上传
+ * 文件下载
  *
  * @author czh
  */

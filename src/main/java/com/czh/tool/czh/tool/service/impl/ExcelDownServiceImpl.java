@@ -16,14 +16,14 @@ import java.io.IOException;
 import java.net.URLEncoder;
 
 /**
- * pdf文件下载
+ * excel文件下载
  *
  * @author czh
  */
 @Service
 @Slf4j
 @FileDownType(FileStrategy.EXCEL)
-public class ExcelServiceImpl implements FileDownService {
+public class ExcelDownServiceImpl implements FileDownService {
 
     @Autowired
     private FileDownConfig fileDownConfig;
