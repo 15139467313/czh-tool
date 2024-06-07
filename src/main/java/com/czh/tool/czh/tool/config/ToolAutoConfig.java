@@ -4,6 +4,8 @@ import com.czh.tool.czh.tool.aspectj.FileUploadAspect;
 import com.czh.tool.czh.tool.aspectj.PreventAspect;
 import com.czh.tool.czh.tool.aspectj.SystemLogAspect;
 import com.czh.tool.czh.tool.exception.CzhExceptionControllerAdvice;
+import com.czh.tool.czh.tool.exception.CzhToolResponse;
+import com.czh.tool.czh.tool.exception.CzhToolResponseException;
 import com.czh.tool.czh.tool.exception.GrNotVoidResponseBodyAdvice;
 import com.czh.tool.czh.tool.response.ResponseFactory;
 import org.springframework.context.annotation.Bean;
@@ -62,5 +64,19 @@ public class ToolAutoConfig {
     public FileUploadAspect fileUploadAspect() {
         return new FileUploadAspect();
     }
+
+
+    @Bean
+    public CzhToolResponseException czhToolResponseException() {
+        return new CzhToolResponseException();
+    }
+
+
+    @Bean
+    public CzhToolResponse czhToolResponse() {
+        return new CzhToolResponse();
+    }
+
+
 }
 

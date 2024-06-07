@@ -94,22 +94,14 @@ public class CzhExceptionControllerAdvice {
 
 
 
-
     /**
      *
      * @param  e 业务逻辑抛出的异常
      * @return 统一返回包装后的结果
      */
-    @ExceptionHandler({RuntimeException.class})
-    public AjaxResult handleException(RuntimeException e) {
-        Class<? extends Throwable> clazz = e.getClass();
-
-        ExceptionMapper exceptionMapper = clazz.getAnnotation(ExceptionMapper.class);
-        if (exceptionMapper != null){
-            return AjaxResult.error(exceptionMapper.code(),exceptionMapper.msg());
-        }
-        return AjaxResult.error(exceptionConfig.getCode(),exceptionConfig.getMessage())
-                .put("data",e.getMessage());
+    @ExceptionHandler({CzhToolResponseException.class})
+    public AjaxResult handleException(CzhToolResponseException e) {
+        return AjaxResult.error(e.getCode(),e.getMessage());
     }
 
 

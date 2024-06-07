@@ -23,7 +23,7 @@ xml
     <dependency>
             <groupId>io.github.15139467313</groupId>
             <artifactId>czh-tool</artifactId>
-            <version>0.3.0</version>
+            <version>0.3.2</version>
         </dependency>
 ```
 

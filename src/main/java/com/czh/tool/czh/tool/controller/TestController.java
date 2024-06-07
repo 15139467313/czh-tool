@@ -2,7 +2,9 @@ package com.czh.tool.czh.tool.controller;
 
 import com.czh.tool.czh.tool.annotation.FileDown;
 import com.czh.tool.czh.tool.annotation.FileUpload;
+import com.czh.tool.czh.tool.annotation.Prevent;
 import com.czh.tool.czh.tool.enums.FileStrategy;
+import com.czh.tool.czh.tool.exception.CzhToolResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,7 +38,8 @@ public class TestController {
     }
 
     @GetMapping("/test")
-    public String test1(){
-        return "11";
+//    @Prevent(value = "2000")
+    public void test1(){
+        CzhToolResponse.raiseException(501,"测试异常");
     }
 }
